@@ -167,6 +167,11 @@ input:focus, select:focus, textarea:focus {
   box-shadow: 0 0 12px var(--color-primary-glow);
 }
 
+select option {
+  background-color: #151525;
+  color: #f3f4f6;
+}
+
 /* Premium Buttons */
 .btn {
   display: inline-flex;
