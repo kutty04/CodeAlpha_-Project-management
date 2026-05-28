@@ -1,0 +1,15 @@
+{
+  "name": "aether-board-fullstack",
+  "version": "1.0.0",
+  "description": "Full-Stack Glassmorphic Project Management Dashboard",
+  "main": "server/server.js",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix client && npm install --prefix server",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

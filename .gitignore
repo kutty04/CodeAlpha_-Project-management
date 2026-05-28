@@ -1,0 +1,33 @@
+# Node dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Local databases
+server/database.sqlite
+server/database.sqlite-journal
+
+# Production builds
+dist/
+client/dist/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

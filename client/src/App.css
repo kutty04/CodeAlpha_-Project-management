@@ -1,0 +1,86 @@
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  position: relative;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating Notification Toast alerts feed */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+  pointer-events: none; /* Let clicks pass through background container */
+}
+
+.toast-card {
+  pointer-events: auto; /* Allow interaction with toasts if needed */
+  padding: 12px 20px;
+  background: rgba(15, 15, 27, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 10px;
+  animation: slideInLeft 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 260px;
+  max-width: 380px;
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.toast-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Toast bullet color variants */
+.toast-info .toast-bullet { background-color: var(--color-info); }
+.toast-success .toast-bullet { background-color: var(--color-success); }
+.toast-warning .toast-bullet { background-color: var(--color-warning); }
+.toast-danger .toast-bullet { background-color: var(--color-danger); }
+
+.toast-info { border-color: rgba(6, 182, 212, 0.25); }
+.toast-success { border-color: rgba(16, 185, 129, 0.25); }
+.toast-warning { border-color: rgba(245, 158, 11, 0.25); }
+.toast-danger { border-color: rgba(239, 68, 68, 0.25); }
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .main-content {
+    height: calc(100% - 80px);
+  }
+  .toast-container {
+    bottom: 96px;
+    right: 16px;
+    left: 16px;
+  }
+  .toast-card {
+    min-width: unset;
+    width: 100%;
+  }
+}
